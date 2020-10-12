@@ -22,3 +22,9 @@ expr 14 % 9
 # (使用乘号时，必须用反斜线屏蔽其特定含义。因为shell可能会误解显示星>号的意义)
 expr 30 \* 3 
  90
+
+#使用冒号：进行匹配模式 返回匹配到的数据个数
+expr 'lrwxrwxrwx 1 root root 19 3月  17 10:12 ./bbb.sh -> /root/shell/test.sh' : '.*-> .*'  
+
+#使用冒号：匹配 并使用（）提取出匹配成功的数据段
+expr 'lrwxrwxrwx 1 root root 19 3月  17 10:12 ./bbb.sh -> /root/shell/test.sh' : '.*-> \(.*\)'
